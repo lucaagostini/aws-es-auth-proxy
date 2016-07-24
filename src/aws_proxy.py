@@ -45,5 +45,5 @@ def index():
             response.add_header(header, requests_response.headers[header])
     return response
 
-def start(host='localhost'):
-    run(host=host, port=config.proxy_port)
+def start():
+    run(host=config.proxy_host, port=config.proxy_port)

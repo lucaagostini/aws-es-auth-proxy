@@ -33,7 +33,7 @@ setup(
     packages=[
         'src'
     ],
-    long_description=read('README'),
+    long_description=read('README.md'),
     classifiers=[
     "Development Status :: 3 - Alpha",
     "Topic :: Internet :: Proxy Servers",

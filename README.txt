@@ -23,3 +23,8 @@ aws-es-auth-proxy --aws_service_endpoint search-mydomain-id.eu-west-1.es.amazona
 For security purpose the service starts automatically listening
 only in localhost on port 8080.
 
+To access to kibana you have to connect with your browser to
+
+```
+http://127.0.0.0.1:8080
+```

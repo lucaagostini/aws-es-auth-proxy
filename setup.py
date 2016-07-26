@@ -22,17 +22,18 @@ reqs = [str(ir.req) for ir in install_reqs]
 
 
 setup(
-    name = "aws-es-auth-proxy",
+    name = "aws_es_auth_proxy",
     version = "0.1.0",
     author = "Luca Agostini",
     author_email = "agostini.luca@gmail.com",
-    description = ("A simple HTTP proxy to AWS Elasticsearch cluster."),
+    description = ("A simple HTTP proxy to authenticato to AWS Elasticsearch cluster."),
     license = "GPL",
     keywords = "aws elasticsearch auth proxy",
     url = "http://packages.python.org/an_example_pypi_project",
     packages=[
-        'src'
+        'aws_es_auth_proxy'
     ],
+    include_package_data=True,
     long_description=read('README.md'),
     classifiers=[
     "Development Status :: 3 - Alpha",
@@ -40,4 +41,5 @@ setup(
     "License :: OSI Approved :: GNU Lesser General Public License v3 (LGPLv3)",
     ],
     install_requires=reqs,
+    scripts=['bin/aws-es-auth-proxy'],
  )

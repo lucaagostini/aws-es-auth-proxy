@@ -15,7 +15,6 @@ For example:
 
 ```
 python server.py \
-    --proxy_port 8080
     --aws_service_region eu-west-1 \ 
     --aws_service_endpoint search-mydomain-id.eu-west-1.es.amazonaws.com
 ```
@@ -23,7 +22,8 @@ python server.py \
 The AWS authentication key is loaded with the boto3 priority 
 (http://boto3.readthedocs.io/en/latest/guide/configuration.html#configuring-credentials)
 
-For security purpose the service listen only in localhost.
+For security purpose the service starts automatically listening 
+only in localhost on port 8080.
 
 ## Libraries
 

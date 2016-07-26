@@ -1,14 +1,19 @@
+#!/usr/bin/env python
+
 import argparse
-import aws_proxy
 import logging
 import boto3
-import config
 
-if __name__ == "__main__":
+import aws_es_auth_proxy
+from aws_es_auth_proxy import config
+
+
+def run():
     logging.info("Proxy started")
 
     parser = argparse.ArgumentParser()
-    parser.add_argument("--aws_service_region", default="eu-west-1", help="AWS service region used for AWS API calls (eg. authentication)")
+    parser.add_argument("--aws_service_region", default="eu-west-1",
+                        help="AWS service region used for AWS API calls (eg. authentication)")
     parser.add_argument("--aws_service_endpoint", help="AWS service domain endpoint")
     parser.add_argument("--proxy_host", default="127.0.0.1", help="The proxy listening host")
     parser.add_argument("--proxy_port", type=int, default=8080, help="The proxy listening port")
@@ -21,4 +26,8 @@ if __name__ == "__main__":
 
     config.aws_service_credentials = boto3.session.Session().get_credentials()
     logging.info("Loading AWS credentials from: " + config.aws_service_credentials.method)
-    aws_proxy.start()
+    aws_es_auth_proxy.start()
+
+
+if __name__ == "__main__":
+    run()

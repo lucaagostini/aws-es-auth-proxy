@@ -2,31 +2,24 @@
 
 ## Objective
 
-Create a proxy to be able to connect to the AWS managed Elasticsearch 
-cluster with the AWS authentication to access kibana and other stuffs
-without authentication.
+The objective is to create a proxy that permits to connect to the AWS 
+managed Elasticsearch cluster protected with the AWS authentication 
+accessing kibana and other stuffs without authentication.
 
-## How to run
+## How to run the application
 
-When you lunch the application you have to set some parameter in the
-command line.
+To lunch the application you have to set some parameter in the
+command line. The only required parameter is `aws_service_endpoint` 
+which require the AWS ElasticSearch endpoint.
+The AWS credential is loaded automatically following the boto3 priority 
+(http://boto3.readthedocs.io/en/latest/guide/configuration.html#configuring-credentials)
 
 For example:
 
 ```
-python server.py \
-    --aws_service_region eu-west-1 \ 
-    --aws_service_endpoint search-mydomain-id.eu-west-1.es.amazonaws.com
+aws-es-auth-proxy --aws_service_endpoint search-mydomain-id.eu-west-1.es.amazonaws.com
 ```
 
-The AWS authentication key is loaded with the boto3 priority 
-(http://boto3.readthedocs.io/en/latest/guide/configuration.html#configuring-credentials)
-
-For security purpose the service starts automatically listening 
+For security purpose the service starts automatically listening
 only in localhost on port 8080.
-
-## Libraries
-
-* http://boto3.readthedocs.io/en/latest/reference/core/session.html
-* https://pypi.python.org/pypi/requests-aws4auth
 

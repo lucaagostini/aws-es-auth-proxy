@@ -23,7 +23,7 @@ reqs = [str(ir.req) for ir in install_reqs]
 
 setup(
     name = "aws_es_auth_proxy",
-    version = "0.1.0",
+    version = "0.1.2",
     author = "Luca Agostini",
     author_email = "agostini.luca@gmail.com",
     description = ("A simple HTTP proxy to authenticato to AWS Elasticsearch cluster."),

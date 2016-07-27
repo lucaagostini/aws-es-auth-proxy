@@ -22,7 +22,7 @@ reqs = [str(ir.req) for ir in install_reqs]
 
 
 setup(
-    name = "aws_es_auth_proxy",
+    name = "aws-es-auth-proxy",
     version = "0.1.4",
     author = "Luca Agostini",
     author_email = "agostini.luca@gmail.com",

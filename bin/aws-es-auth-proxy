@@ -9,6 +9,7 @@ from aws_es_auth_proxy import config
 
 
 def run():
+    logging.basicConfig(level=logging.INFO)
     logging.info("Proxy started")
 
     parser = argparse.ArgumentParser()
@@ -25,7 +26,11 @@ def run():
     config.proxy_port = args.proxy_port
 
     config.aws_service_credentials = boto3.session.Session().get_credentials()
-    logging.info("Loading AWS credentials from: " + config.aws_service_credentials.method)
+    if config.aws_service_credentials:
+        logging.info("Loading AWS credentials from: " + config.aws_service_credentials.method + " with access key " + config.aws_service_credentials.access_key)
+    else:
+        logging.error("No credential found")
+        exit(1)
     aws_es_auth_proxy.start()
 
 

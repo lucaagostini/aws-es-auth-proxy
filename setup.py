@@ -23,7 +23,7 @@ reqs = [str(ir.req) for ir in install_reqs]
 
 setup(
     name = "aws-es-auth-proxy",
-    version = "0.1.4",
+    version = "0.1.5",
     author = "Luca Agostini",
     author_email = "agostini.luca@gmail.com",
     description = ("A simple HTTP proxy to authenticato to AWS Elasticsearch cluster."),
@@ -34,7 +34,7 @@ setup(
         'aws_es_auth_proxy'
     ],
     include_package_data=True,
-    long_description=read('README.md'),
+    long_description=read('README.txt'),
     classifiers=[
     "Development Status :: 3 - Alpha",
     "Topic :: Internet :: Proxy Servers",

@@ -1,12 +1,16 @@
 # aws-es-auth-proxy
 
-## Objective
+A proxy that permits to connect to the AWS managed Elasticsearch cluster
+protected with the AWS authentication accessing kibana and other stuffs
+without authentication.
 
-The objective is to create a proxy that permits to connect to the AWS 
-managed Elasticsearch cluster protected with the AWS authentication 
-accessing kibana and other stuffs without authentication.
+# Installation with PIP
 
-## How to run the application
+```
+pip install aws-es-auth-proxy
+```
+
+# How to run the application
 
 To lunch the application you have to set some parameter in the
 command line. The only required parameter is `aws_service_endpoint` 

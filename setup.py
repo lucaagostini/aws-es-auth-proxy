@@ -29,7 +29,7 @@ setup(
     description = ("A simple HTTP proxy to authenticato to AWS Elasticsearch cluster."),
     license = "GPL",
     keywords = "aws elasticsearch auth proxy",
-    url = "http://packages.python.org/an_example_pypi_project",
+    url = "https://github.com/lucaagostini/aws-es-auth-proxy",
     packages=[
         'aws_es_auth_proxy'
     ],
